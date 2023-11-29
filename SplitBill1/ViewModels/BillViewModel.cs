@@ -20,6 +20,7 @@ namespace SplitBill1.ViewModels
                 OnPropertyChanged();
                 OnPropertyChanged("BillAmountShare");
                 OnPropertyChanged("BillAmountTipShare");
+                OnPropertyChanged("BillAmountTip");
                 OnPropertyChanged("TipAmount");
             }
         }
