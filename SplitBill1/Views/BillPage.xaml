@@ -5,19 +5,32 @@
              xmlns:vm="clr-namespace:SplitBill1.ViewModels"
              Title="BillPage">
     <VerticalStackLayout>
-        <Frame>
+        <Frame BackgroundColor="#333">
             <Frame.BindingContext>
                 <vm:BillViewModel />
             </Frame.BindingContext>
             <VerticalStackLayout>
+                <FlexLayout Direction="Row" JustifyContent="SpaceAround" AlignContent="Center" BackgroundColor="Black">
+                    <Label Text="{Binding BillAmountTipShare}" FontSize="Large" VerticalTextAlignment="Center" />
+                    <VerticalStackLayout>
+                        <Label Text="Celkem" />
+                        <Label Text="{Binding BillAmountTip}" />
+                        <Label Text="Podíl" />
+                        <Label Text="{Binding BillAmountShare}" />
+                    </VerticalStackLayout>
+                </FlexLayout>
+                <Label Text="Celý účet" HorizontalTextAlignment="Center"/>
                 <Entry Text="{Binding BillAmount}" />
-                <Label Text="{Binding BillAmount}" />
-                <Slider Value="{Binding TipAmount}" Maximum="10" Minimum="0" />
-                <Label Text="{Binding TipAmount}" />
+                <Label Text="Spropitné" HorizontalTextAlignment="Center"/>
+                <Slider Value="{Binding TipValue}" Maximum="10" Minimum="0" />
+                <VerticalStackLayout HorizontalOptions="Center">
+                    <Label Text="{Binding TipAmount}" HorizontalTextAlignment="Center" />
+                    <Label Text="Počet" HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
                 <HorizontalStackLayout>
-                    <Button />
-                    <Label />
-                    <Button />
+                    <Button Text="-" Command="{Binding RemovePerson}" />
+                    <Label Text="{Binding People}" VerticalTextAlignment="Center" Margin="10" />
+                    <Button Text="+" Command="{Binding AddPerson}" />
                 </HorizontalStackLayout>
             </VerticalStackLayout>
         </Frame>
