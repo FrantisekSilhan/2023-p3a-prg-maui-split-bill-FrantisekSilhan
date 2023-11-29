@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SplitBill1.Views.BillPage"
+             xmlns:vm="clr-namespace:SplitBill1.ViewModels"
+             Title="BillPage">
+    <VerticalStackLayout>
+        <Frame>
+            <Frame.BindingContext>
+                <vm:BillViewModel />
+            </Frame.BindingContext>
+            <VerticalStackLayout>
+                <Entry Text="{Binding BillAmount}" />
+                <Label Text="{Binding BillAmount}" />
+                <Slider Value="{Binding TipAmount}" Maximum="10" Minimum="0" />
+                <Label Text="{Binding TipAmount}" />
+                <HorizontalStackLayout>
+                    <Button />
+                    <Label />
+                    <Button />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
